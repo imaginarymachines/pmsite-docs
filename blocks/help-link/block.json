@@ -1,0 +1,32 @@
+{
+    "name": "pmsite-docs/help-link",
+    "title": "Helpful Link",
+    "description": "BLOCK DESCRIPTION",
+    "attributes": {
+        "linkUrl": {
+            "type": "string",
+            "required": "true"
+        },
+        "linkText": {
+            "type": "string",
+            "required": "true"
+        },
+        "authorText": {
+            "type": "string",
+            "required": "true"
+        },
+        "authorUrl": {
+            "type": "string",
+            "required": "true"
+        }
+    },
+    "category": "text",
+    "apiVersion": 2,
+    "icon": "smiley",
+    "supports": {
+        "html": false
+    },
+    "editorScript": "file:../../build/block-help-link.js",
+	"editorStyle": "file:../../build/block-help-link.css",
+	"style": "file:../../build/block-help-link.css"
+}

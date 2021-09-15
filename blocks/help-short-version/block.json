@@ -1,0 +1,20 @@
+{
+    "name": "pmsite-docs/help-short-version",
+    "title": "Short Version",
+    "description": "BLOCK DESCRIPTION",
+    "attributes": {
+        "content": {
+            "type": "string",
+            "default": "Hi Roy"
+        }
+    },
+    "category": "text",
+    "apiVersion": 2,
+    "icon": "smiley",
+    "supports": {
+        "html": false
+    },
+    "editorScript": "file:../../build/block-help-short-version.js",
+	"editorStyle": "file:../../build/block-help-short-version.css",
+	"style": "file:../../build/block-help-short-version.css"
+}
