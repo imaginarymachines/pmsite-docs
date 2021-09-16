@@ -19,6 +19,7 @@
     "supports": {
         "html": false
     },
+    "single": true,
     "editorScript": "file:../../build/block-help-short-version.js",
 	"editorStyle": "file:../../build/block-help-short-version.css",
 	"style": "file:../../build/block-help-short-version.css"
