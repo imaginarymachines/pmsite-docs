@@ -10,7 +10,7 @@ export const Content = ({ attributes }) => {
 	}
 	return (
 		<>
-			<a href={linkUrl} target="_blank">
+			<a href={linkUrl} target="_blank" rel="noopener">
 				{linkText}
 			</a>
 			{authorText && (
@@ -18,7 +18,7 @@ export const Content = ({ attributes }) => {
 					{authorUrl ? (
 						<span>
 							{__("By")}{" "}
-							<a href={authorUrl} target="_blank">
+							<a href={authorUrl} target="_blank" rel="noopener">
 								{authorText}
 							</a>
 						</span>

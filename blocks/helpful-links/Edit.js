@@ -4,11 +4,12 @@ import { useBlockProps, InnerBlocks } from "@wordpress/block-editor";
 import "./editor.scss";
 const ALLOWED_BLOCKS = ["pmsite-docs/help-link"];
 
-export const Editor = ({ value, onChange, isSelected }) => <></>;
+export const Above = () => <h3>{__("Helpful Links")}</h3>;
 
 export default function Edit({ attributes, setAttributes, isSelected }) {
 	return (
 		<div {...useBlockProps()}>
+			<Above />
 			<InnerBlocks allowedBlocks={ALLOWED_BLOCKS} />
 		</div>
 	);
