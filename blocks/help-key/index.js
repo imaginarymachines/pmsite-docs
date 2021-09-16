@@ -7,17 +7,19 @@ import { useSelect, useDispatch } from "@wordpress/data";
 import { TextControl } from "@wordpress/components";
 const SideBar = () => {
 	//Get meta value
-	const { pmserverhelpkey } = useSelect((select) =>
+	const meta = useSelect((select) =>
 		select("core/editor").getEditedPostAttribute("meta")
 	);
 
 	//Get updater for meta
-	const { editPost } = useDispatch("core/editor", [pmserverhelpkey]);
+	const { editPost } = useDispatch("core/editor", []);
 	return (
 		<PluginSidebar name="help-key" title={__("Help Key")} icon={star}>
 			<PanelBody>
 				<TextControl
-					value={pmserverhelpkey}
+					value={
+						meta.hasOwnProperty("pmserverhelpkey") ? meta.pmserverhelpkey : ""
+					}
 					label={__("Help Key")}
 					onChange={(newValue) => {
 						editPost({

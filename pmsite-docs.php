@@ -1,10 +1,10 @@
 <?php
-                
+
 
 /**
 * Plugin Name: Plugin Machine Docs
-* Plugin URI: 
-* Description: Documentation Post Type And Blocks 
+* Plugin URI:
+* Description: Documentation Post Type And Blocks
 * Version: 0.0.1
 * Requires at least: 5.8
 * Requires PHP:      7.1.0
@@ -58,17 +58,18 @@ add_action( 'init', function(){
             'items_list_navigation' => _x( 'Docs List Navigation ', 'Screen reader text for the pagination heading on the post type listing screen. Default “Posts list navigation”/”Pages list navigation”. Added in 4.4', 'pmsite-docs' ),
             'items_list'            => _x( 'Docs List ', 'Screen reader text for the items list heading on the post type listing screen. Default “Posts list”/”Pages list”. Added in 4.4', 'pmsite-docs' ),
         ],
-        'publicly_queryable' => 1,
-        'public'             => 1,
-        'show_ui'            => 1,
-        'show_in_menu'       => 1,
+        'publicly_queryable' => true,
+        'public'             => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
         'query_var'          => 1,
         'rewrite'            => 1,
         'capability_type'    => 'post',
-        'has_archive'        => 1,
-        'hierarchical'       => 1,
+        'has_archive'        => true,
+        'hierarchical'       => false,
         'menu_position'      => 25,
-        'supports'           => ['title', 'editor', 'thumbnail', 'author', 'excerpt'],
+        'show_in_rest' => true,
+        'supports'           => ['title', 'editor', 'thumbnail', 'author', 'excerpt', 'custom-fields'],
     ];
 
     register_post_type( 'doc', $args );
