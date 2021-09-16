@@ -4,11 +4,16 @@
     "description": "BLOCK DESCRIPTION",
     "attributes": {
         "content": {
+            "type": "array",
+            "source":"children",
+            "selector": "p"
+        },
+        "alignment": {
             "type": "string",
-            "default": "Hi Roy"
+            "default": "none"
         }
     },
-    "category": "text",
+    "category": "design",
     "apiVersion": 2,
     "icon": "smiley",
     "supports": {
