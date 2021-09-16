@@ -5,20 +5,30 @@ import "./editor.scss";
 
 export const Content = ({ attributes }) => {
 	const { linkUrl, linkText, authorText, authorUrl } = attributes;
-	if (!linkUrl || !linkText || !authorText || !authorUrl) {
-		return null;
+	if (!linkUrl || !linkText) {
+		return <div>{__("Set link url and link text.")}</div>;
 	}
 	return (
 		<>
 			<a href={linkUrl} target="_blank">
 				{linkText}
 			</a>
-			<span>
-				{__("By")}{" "}
-				<a href={authorUrl} target="_blank">
-					{authorText}
-				</a>
-			</span>
+			{authorText && (
+				<>
+					{authorUrl ? (
+						<span>
+							{__("By")}{" "}
+							<a href={authorUrl} target="_blank">
+								{authorText}
+							</a>
+						</span>
+					) : (
+						<span>
+							{__("By")} {authorText}
+						</span>
+					)}
+				</>
+			)}
 		</>
 	);
 };
@@ -26,11 +36,6 @@ export const Editor = ({ attributes, setAttributes }) => {
 	const { linkUrl, linkText, authorText, authorUrl } = attributes;
 	return (
 		<>
-			{isSelected ? (
-				<TextControl value={value} onChange={onChange} />
-			) : (
-				<p>{value}</p>
-			)}
 			<InspectorControls>
 				<TextControl
 					label={__("Link Text")}
@@ -75,11 +80,7 @@ export const Editor = ({ attributes, setAttributes }) => {
 export default function Edit({ attributes, setAttributes, isSelected }) {
 	return (
 		<div {...useBlockProps()}>
-			<Editor
-				isSelected={isSelected}
-				value={attributes.content}
-				onChange={(content) => setAttributes({ content })}
-			/>
+			<Editor attributes={attributes} setAttributes={setAttributes} />
 		</div>
 	);
 }
