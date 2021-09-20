@@ -6,7 +6,8 @@
         "content": {
             "type": "array",
             "source":"children",
-            "selector": "p"
+            "selector": "div",
+            "multiline": "p"
         },
         "alignment": {
             "type": "string",
